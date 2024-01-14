@@ -1,0 +1,27 @@
+package KieRule;
+import  com.drooldrl.DroolDRLEngine.Transaction;
+
+
+rule "rule1"
+
+when
+demo : Transaction(amount>0 && sendCountry == "Cuba")
+then
+demo.setAmount(1);
+end;
+
+rule "rule-2"
+
+when
+demo : Transaction(amount>0 && sendCountry == "Syria")
+then
+demo.setAmount(2);
+end;
+
+rule "rule-3"
+
+when
+demo : Transaction(amount>0 && sendCountry == "Canada")
+then
+demo.setAmount(3);
+end;
